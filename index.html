@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>rtstart - RT起始页</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="RTSTART.png">
+    <script src="script.js"></script>
+    <script>
+      var time_jx = true;
+    </script>
+</head>
+<body id="app">
+    <p id="gpt"></p>
+    <h1 id="tm" class="time" onclick="time_jx = !time_jx"></h1>
+    <script>
+      // 获取具有指定id的h1元素
+      var tmElement = document.getElementById("tm");
+
+      // 定义更新时间的函数
+      function updateTime() {
+        if (time_jx) {
+          var currentTime = new Date().toLocaleTimeString([], {
+            hour: "numeric",
+            minute: "2-digit",
+            second: "2-digit"
+          });
+        } else {
+          var currentTime = new Date().toLocaleTimeString([], {
+            hour: "numeric",
+            minute: "2-digit"
+          });
+        }
+        // 将格式化后的时间显示在h1元素中
+        tmElement.textContent = currentTime;
+      }
+
+      setInterval(updateTime, 100);
+    </script>
+    <form action="https://baidu.com/s" target="_blank" class="sousuo_b" id="sousf">
+        <input type="text" class="sousuo" name="wd" id="ss" placeholder="搜索">
+    </form>
+    <form id="myForm" action="#" method="POST">
+      <select id="selectBox" onchange="updateFormAction()">
+        <option value="baidu">百度</option>
+        <option value="bing">必应</option>
+        <option value="sogou">搜狗</option>
+        <option value="google">谷歌</option>
+        <option value="a360">360</option>
+        <option value="ddg">DuckDuckGo</option>
+        <option value="blog">Blog</option>
+      </select>
+    </form>
+    <script>
+      function updateFormAction() {
+        var selectBox = document.getElementById("selectBox");
+        var fform = document.getElementById("sousf");
+        var ssname = document.getElementById("ss");
+
+        var se = selectBox.value;
+
+        // 判断单选框是否被选中
+        if (se == "baidu") {
+          // 修改form的action属性
+          fform.action = "https://baidu.com/s";
+          ssname.name = "wd";
+        } else if (se == "bing") {
+          fform.action = "https://bing.com/search";
+          ssname.name = "q";
+        } else if (se == "sogou") {
+          fform.action = "https://sogou.com/web";
+          ssname.name = "query";
+        } else if (se == "a360") {
+          fform.action = "https://so.com/s";
+          ssname.name = "q";
+        } else if (se == "blog") {
+          fform.action = "https://ovotun.ates.top/";
+          ssname.name = "s";
+        } else if (se == "google") {
+          fform.action = "https://google.com/search";
+          ssname.name = "q";
+        } else if (se == "ddg") {
+          fform.action = "https://duckduckgo.com/";
+          ssname.name = "q";
+        }
+      }
+    </script>
+    <p id="yiyan"></p>
+    <script>
+      fetch('https://v1.hitokoto.cn/?encode=text')
+      .then(function(response) {
+        return response.text();
+      })
+      .then(function(data) {
+        // 将结果插入到 id 为 "yiyan" 的 p 标签中
+        document.getElementById("yiyan").textContent = data;
+      })
+      .catch(function(error) {
+        console.log(error);
+      });
+    </script>
+    <div class="di"><a href="https://ovotun.ates.top/?page_id=118" style="color: #333; text-decoration: none;">Rtstart v5</a> | <a href="https://www.github.com/program-zoubg" style="color: #333; text-decoration: none;">GitHub</a></div>
+  </body>
+</html>
