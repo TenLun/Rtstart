@@ -9,7 +9,7 @@
 body{
     font-family:"btfFont" !important;
     background: fixed;
-    background-image: url("bg1.jpg");
+    background-image: url("public/background.jpg");
     background-size: cover;
 }
 .time {
@@ -18,9 +18,7 @@ body{
     top: 15%;
     width: auto;
     height: auto;
-    padding: 30px;
-    padding-top: 5px;
-    padding-bottom: 5px;
+    padding: 5px 30px;
     background-color: rgba(255, 255, 255, 0.05) !important;
     backdrop-filter: blur(10px) !important;
     border-radius: 15px;
@@ -38,14 +36,14 @@ h1 {
     padding: 10px;
 }
 
-.sousuo_b {
+.search-wrapper {
     position: fixed;
     margin-top: 30vh;
     left: 50%;
     transform: translate(-50%, -50%);
 }
 
-.sousuo {
+.search-container {
     border-radius: 30px;
     backdrop-filter: blur(12px);
     background-color: rgba(0, 0, 0, 0.07) !important;
@@ -63,10 +61,11 @@ h1 {
     transition: width 0.75s;
     text-align: center;
 }
-.sousuo:hover {
+
+.search-container:hover {
     width: 70vw;
 }
-.sousuo:focus {
+.search-container:focus {
     width: 70vw;
     transition: 0.4s;
     outline: none;
@@ -74,7 +73,7 @@ h1 {
     color: #000;
 }
 
-.di {
+.link {
     color: #333;
     position: fixed;
     left: 50%;
@@ -87,7 +86,7 @@ h1 {
     border-radius: 5px;
 }
 
-.di a:hover {
+.link a:hover {
     animation: dih 1s forwards;
 }
 
@@ -121,7 +120,7 @@ h1 {
     color: #ccc;
 }
 
-#yiyan {
+#quote {
     position: fixed;
     left: 50%;
     bottom: 10px;
@@ -136,7 +135,7 @@ h1 {
     transition: all 0.5s;
 }
 
-#yiyan:hover {
+#quote:hover {
     padding-left: 20px;
     padding-right: 20px;
     color: #111;

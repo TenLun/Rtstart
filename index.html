@@ -3,10 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>rtstart - RT起始页</title>
+    <title>Rtstart - RT起始页</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="RTSTART.png">
-    <script src="script.js"></script>
+    <link rel="icon" href="favicon.png">
     <script>
       var time_jx = true;
     </script>
@@ -38,8 +37,9 @@
 
       setInterval(updateTime, 100);
     </script>
-    <form action="https://baidu.com/s" target="_blank" class="sousuo_b" id="sousf">
-        <input type="text" class="sousuo" name="wd" id="ss" placeholder="搜索">
+    <form action="https://baidu.com/s" target="_blank" class="search-wrapper" id="sousf">
+      <label for="input"></label>
+      <input type="text" class="search-container" name="wd" id="input" placeholder="搜索">
     </form>
     <form id="myForm" action="#" method="POST">
       <select id="selectBox" onchange="updateFormAction()">
@@ -86,20 +86,23 @@
         }
       }
     </script>
-    <p id="yiyan"></p>
+    <p id="quote"></p>
+    <div class="link">
+      <a href="https://ovotun.ates.top/?page_id=118" style="color: #333; text-decoration: none;">Rtstart v5</a> | <a href="https://www.github.com/program-zoubg" style="color: #333; text-decoration: none;">GitHub</a>
+    </div>
     <script>
       fetch('https://v1.hitokoto.cn/?encode=text')
       .then(function(response) {
         return response.text();
       })
       .then(function(data) {
-        // 将结果插入到 id 为 "yiyan" 的 p 标签中
-        document.getElementById("yiyan").textContent = data;
+        // 将结果插入到 id 为 "quote" 的 p 标签中
+        document.getElementById("quote").textContent = data;
       })
       .catch(function(error) {
         console.log(error);
       });
     </script>
-    <div class="di"><a href="https://ovotun.ates.top/?page_id=118" style="color: #333; text-decoration: none;">Rtstart v5</a> | <a href="https://www.github.com/program-zoubg" style="color: #333; text-decoration: none;">GitHub</a></div>
+    <script src="connection.js"></script>
   </body>
 </html>
