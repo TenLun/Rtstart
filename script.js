@@ -1,5 +1,5 @@
 var gpt = document.getElementById('gpt')
-var websocket = new WebSocket('wss://chatnio.net/chat');
+var websocket = new WebSocket('wss://api.chatnio.net/chat');
 var jsons = { token: 'anonymous', id: '-1', message: 'hello!', model: 'gpt-3.5-turbo' }
 var jsonstr = JSON.stringify(jsons)
 websocket.onopen = function() {
