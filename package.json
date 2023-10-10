@@ -1,0 +1,22 @@
+{
+  "name": "rtstart",
+  "version": "5.0.0",
+  "description": "This is a new start page.",
+  "main": "index.html",
+  "scripts": {
+    "serve": "vite"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ProgramSpaceStudio/Rtstart.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ProgramSpaceStudio/Rtstart/issues"
+  },
+  "homepage": "https://github.com/ProgramSpaceStudio/Rtstart#readme",
+  "devDependencies": {
+    "vite": "^4.4.11"
+  }
+}
