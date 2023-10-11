@@ -141,3 +141,10 @@ h1 {
     color: #111;
     background-color: rgba(100, 100, 100, 0.3);
 }
+
+#gpt {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    color: #000;
+}
