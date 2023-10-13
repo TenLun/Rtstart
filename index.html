@@ -53,36 +53,27 @@
       </select>
     </form>
     <script>
+      let engineDict = {
+        baidu: ["https://baidu.com/s","wd"],
+        bing: ["https://bing.com/search","q"],
+        sogou: ["https//sougou.com/web","query"],
+        a360: ["https://so.com/s","q"],
+        blog: ["https://ovotun.ates.top/","s"],
+        google: ["https://google.com/search","q"],
+        ddg: ["https://duckduckgo.com","q"]
+      }
+
       function updateFormAction() {
         var selectBox = document.getElementById("selectBox");
         var fform = document.getElementById("sousf");
-        var ssname = document.getElementById("ss");
+        //var ssname = document.getElementById("ss"); DOM not found
 
         var se = selectBox.value;
 
         // 判断单选框是否被选中
-        if (se == "baidu") {
+        if (se != "") {
           // 修改form的action属性
-          fform.action = "https://baidu.com/s";
-          ssname.name = "wd";
-        } else if (se == "bing") {
-          fform.action = "https://bing.com/search";
-          ssname.name = "q";
-        } else if (se == "sogou") {
-          fform.action = "https://sogou.com/web";
-          ssname.name = "query";
-        } else if (se == "a360") {
-          fform.action = "https://so.com/s";
-          ssname.name = "q";
-        } else if (se == "blog") {
-          fform.action = "https://ovotun.ates.top/";
-          ssname.name = "s";
-        } else if (se == "google") {
-          fform.action = "https://google.com/search";
-          ssname.name = "q";
-        } else if (se == "ddg") {
-          fform.action = "https://duckduckgo.com/";
-          ssname.name = "q";
+          fform.action = engineDict[se][1];
         }
       }
     </script>
